@@ -1,0 +1,17 @@
+@media (500px <= width) {
+    .hamburger-menu {
+        display: none;
+    }
+    .container-header {
+        grid-template-columns: 100px repeat(3, 1fr);
+    }
+}
+
+@media (500px >= width) {
+    .link-section {
+        display: none;
+    }
+    .container-header {
+        grid-template-columns: 100px;
+    }
+}
