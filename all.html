@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/icon-apex5.png">
     <title>APEX LEGEND</title>
     <style>
         html, body {
@@ -15,6 +16,7 @@
             user-select: none;
             /* overflow-y: scroll; */
             /* scroll-snap-type: y mandatory; */
+            color: white;
         }
 
         ::-webkit-scrollbar {
@@ -35,7 +37,7 @@
 
         .container-header {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: 100px repeat(3, 1fr) 100px;
             align-items: center;
         }
 
@@ -47,14 +49,21 @@
             transform: scale(1.2);
         }
 
+        .link-section {
+            display: flex;
+            justify-content: center;
+        }
+
         .link-section:hover {
             color: rgb(255, 52, 52);
-        }
+        } 
 
         header .logo-apex {
             width: 80px;
             overflow: hidden;
             position: relative;
+            display: flex;
+            justify-self: center;
         }
 
         footer {
@@ -72,10 +81,6 @@
         .section1 {
             overflow: hidden;
             position: relative;
-        }
-
-        .section1 p {
-            color: white;
         }
 
         .presentation-video {
@@ -99,21 +104,119 @@
         .container-presentation-info .logo-apex {
             width: 300px;
         }
+
+        #menu__toggle {
+            opacity: 0;
+            position: absolute;
+            z-index: -1;
+        }
+
+        #menu__toggle:checked + .menu__btn > span {
+            transform: rotate(45deg);
+        }
+
+        #menu__toggle:checked + .menu__btn > span::before {
+            top: 0;
+            transform: rotate(0deg);
+        }
+
+        #menu__toggle:checked + .menu__btn > span::after {
+            top: 0;
+            transform: rotate(90deg);
+        }
+
+        #menu__toggle:checked ~ .menu__box {
+            right: 0;   
+        }
+
+        .menu__btn {
+            position: fixed;
+            top: 40px;
+            right: 40px;
+            width: 1.5rem;
+            height: 30px;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .menu__btn > span,
+        .menu__btn > span::before,
+        .menu__btn > span::after {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #616161;
+            transition-duration: .25s;
+            border-radius: 1rem;
+        }
+        
+        .menu__btn > span::after {
+            content: '';
+            top: 8px;
+        }
+
+        .menu__box {
+            display: block;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 300px;
+            height: 100%;
+            margin: 0;
+            padding: 80px 0;
+            list-style: none;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+            transition-duration: .25s;
+            clip-path: polygon(100% 0, 100% 30%, 80% 28%, 60% 30%, 60% 0);
+            background-color: #800000;
+            background: linear-gradient(to bottom right, #800000, #a30000, #ff0000);
+            text-align: right;
+        }
+
+        .menu__item {
+            display: block;
+            padding: 12px 24px;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            text-decoration: none;
+            transition-duration: .25s;
+        }
+
+        .menu__item:hover {
+            background-color: #c30000;  
+
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="container-header">
             <img class="logo-apex" alt="logo-apex" src="img/apex-logo.png">
-            <div class="link-section">Section1</div>
-            <div class="link-section"><a href="#section2">Section 2</a></div>
-            <div class="link-section">Section3</div>
+            <div class="link-section" href="#section1">Section 1</div>
+            <div class="link-section" href="#section2">Section 2</div>
+            <div class="link-section" href="#section3">Section 3</div>
+        </div>
+
+        <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+            <span></span>
+            </label>
+        
+            <ul class="menu__box">
+                <li><a class="menu__item" href="#section1">Section 1</a></li>
+                <li><a class="menu__item" href="#section2">Section 2</a></li>
+                <li><a class="menu__item" href="#section3">Section 3</a></li>
+            </ul>
         </div>
     </header>
 
-    <section class="section1">
+    <section id="section1">
         CONTENT 1
-        <video class="presentation-video" src="img/apex-trailer.mp4" autoplay loop muted></video>
+        <video class="presentation-video" src="img/apex-trailer2.mp4" autoplay loop muted></video>
+        <!-- <img class="presentation-video" src="https://placehold.co/100" alt="placeholder">   -->
         <div class="container-presentation-info">
             <img class="logo-apex" alt="logo-apex" src="img/apex-logo.png">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore laboriosam voluptatibus perferendis, inventore ad repudiandae animi dolorem provident quod labore aspernatur repellendus reiciendis fugiat unde aut a facere esse consequuntur.</p>
@@ -133,20 +236,20 @@
     </footer>
 
     <script>
-        document.querySelectorAll('nav a').forEach(anchor => {
+        document.querySelectorAll('.link-section').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-    
+
                 const targetId = this.getAttribute('href');
                 const targetSection = document.querySelector(targetId);
-    
+
                 targetSection.scrollIntoView({
                     behavior: 'smooth'
                 });
             });
         });
 
-        document.querySelectorAll('.link-section').forEach(anchor => {
+        document.querySelectorAll('.menu__item').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
 
