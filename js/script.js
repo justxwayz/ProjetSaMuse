@@ -24,3 +24,15 @@ document.querySelectorAll('.menu__item').forEach(anchor => {
         });
     });
 });
+
+var video = document.querySelector('.presentation-video');
+
+video.addEventListener('loadedmetadata', function() {
+    this.currentTime = 3;
+});
+
+video.addEventListener('timeupdate', function() {
+    if (this.currentTime >= 93) { 
+        this.currentTime = 3;
+    }
+});
