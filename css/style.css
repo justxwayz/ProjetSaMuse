@@ -19,10 +19,10 @@ header {
     position: fixed;
     z-index: 1; 
     top: 0;
-    height: fit-content;
     width: 100%;
-    background-color: rgb(34, 34, 34);
+    height: fit-content;
     padding: 0.5rem;
+    background-color: rgb(34, 34, 34);
 }
 
 .container-header {
@@ -196,9 +196,58 @@ section {
     border: 1px solid;
 }
 
+/* #section3, #section2, #section1, header {
+    display: none;
+} */
+
 /* Footer */
 
-footer {
+/* footer {
     height: 10%;
     background-color: bisque;
+    color: black;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+
+.container-footer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+} */
+
+footer {
+    width: 100%;
+    height: fit-content;
+    padding: 5%;
+    background-color: rgb(34, 34, 34);
+}
+
+.container-footer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.contacts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.contacts:hover {
+    color: rgb(255, 52, 52);
+}
+
+.container-footer div:nth-child(1) {
+    grid-column: 2;
+}
+
+footer .apex-logo {
+    width: 60px;
+    display: flex;
+    align-self: center;
+    justify-self: center;
 }
