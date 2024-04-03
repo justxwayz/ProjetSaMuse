@@ -1,4 +1,4 @@
-html, body {
+body {
     margin: 0;
     padding: 0;
     background-color: antiquewhite;
@@ -13,16 +13,16 @@ html, body {
     display: none;
 }
 
+/* Header */
+
 header {
     position: fixed;
     z-index: 1; 
     top: 0;
-    height: fit-content;
     width: 100%;
+    height: fit-content;
+    padding: 0.5rem;
     background-color: rgb(34, 34, 34);
-
-    color: white;
-    padding: 1rem;
 }
 
 .container-header {
@@ -35,46 +35,42 @@ header .logo-apex, .link-section {
     transition: transform 0.3s ease;
 }
 
-header .logo-apex:hover {
-    transform: scale(1.2);
-}
-
 .link-section {
     display: flex;
     justify-content: center;
+    font-weight: bold;
 }
 
 .link-section:hover {
     color: rgb(255, 52, 52);
 } 
 
+
 header .logo-apex {
-    width: 80px;
-    overflow: hidden;
+    width: 60px;
     position: relative;
     display: flex;
     justify-self: center;
 }
 
-footer {
-    height: 10%;
-    background-color: bisque;
+header .logo-apex:hover {
+    transform: scale(1.2);
 }
+
+/* Section */
 
 section {
     width: 100vw;
     height: 100vh;
 }
 
-.section1, .section2, footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.section1 {
-    overflow: hidden;
-    position: relative;
+/* Section 1 */
+.container-presentation-info {
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    text-align: center; 
 }
 
 .presentation-video {
@@ -87,18 +83,12 @@ section {
     z-index: 0; 
 }
 
-.container-presentation-info {
-    position: absolute;
-    top: 50%;
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    text-align: center; 
-}
-
 .container-presentation-info .logo-apex {
     width: 300px;
 }
 
+
+/* Menu burger */
 #menu__toggle {
     opacity: 0;
     position: absolute;
@@ -125,7 +115,7 @@ section {
 
 .menu__btn {
     position: fixed;
-    top: 40px;
+    top: 25px;
     right: 40px;
     width: 1.5rem;
     height: 30px;
@@ -140,7 +130,7 @@ section {
     position: absolute;
     width: 100%;
     height: 2px;
-    background-color: #616161;
+    background-color: #a0a0a0;
     transition-duration: .25s;
     border-radius: 1rem;
 }
@@ -162,9 +152,8 @@ section {
     list-style: none;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
     transition-duration: .25s;
-    clip-path: polygon(100% 0, 100% 30%, 80% 28%, 60% 30%, 60% 0);
-    background-color: #800000;
-    background: linear-gradient(to bottom right, #800000, #a30000, #ff0000);
+    clip-path: polygon(100% 0, 100% 25%, 80% 22%, 65% 25%, 65% 0);
+    background-color: #a00000;
     text-align: right;
 }
 
@@ -173,7 +162,7 @@ section {
     padding: 12px 24px;
     color: white;
     font-family: 'Roboto', sans-serif;
-    font-size: 20px;
+    font-size: 15px;
     text-decoration: none;
     transition-duration: .25s;
 }
@@ -182,6 +171,7 @@ section {
     background-color: #c30000;  
 }
 
+/* Section 2*/
 .container-legendes {
     display: flex;
     justify-content: center;
@@ -194,4 +184,70 @@ section {
     width: 200px;
     height: 200px;
     background-color: grey;
+}
+
+/* Section 3 */
+
+#section3 {
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid;
+}
+
+/* #section3, #section2, #section1, header {
+    display: none;
+} */
+
+/* Footer */
+
+/* footer {
+    height: 10%;
+    background-color: bisque;
+    color: black;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+
+.container-footer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+} */
+
+footer {
+    width: 100%;
+    height: fit-content;
+    padding: 5%;
+    background-color: rgb(34, 34, 34);
+}
+
+.container-footer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.contacts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.contacts:hover {
+    color: rgb(255, 52, 52);
+}
+
+.container-footer div:nth-child(1) {
+    grid-column: 2;
+}
+
+footer .apex-logo {
+    width: 60px;
+    display: flex;
+    align-self: center;
+    justify-self: center;
 }
