@@ -1,0 +1,276 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100vw;
+    height: 100vh;
+    user-select: none;
+    color: white;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Header */
+
+header {
+    position: fixed;
+    z-index: 1; 
+    top: 0;
+    width: 100%;
+    height: fit-content;
+    padding: 0.5rem;
+    background-color: rgb(34, 34, 34);
+}
+
+.container-header {
+    display: grid;
+    grid-template-columns: 100px repeat(3, 100px);
+    align-items: center;
+}
+
+.link-sections {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+header .logo-apex, .link-sections {
+    transition: transform 0.3s ease;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+} 
+
+a:hover {
+    color: rgb(255, 52, 52);
+} 
+
+header .logo-apex {
+    width: 60px;
+    position: relative;
+    display: flex;
+    justify-self: center;
+}
+
+header .logo-apex:hover {
+    transform: scale(1.2);
+}
+
+/* Section */
+
+section {
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Section 1 */
+#section1 {
+    background: url("/img/fond-degrade-rouge.jpg") no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-presentation-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
+    padding: 5rem;
+    flex-wrap: wrap;
+}
+
+.legendes-card {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(to bottom, rgba(222,222,222,1) 0%, rgba(181,181,181,1) 32%, rgba(129,129,129,1) 48%, rgba(31,31,31,1) 100%);
+    clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
+    position: relative;
+    overflow: hidden;
+    margin-inline: 5rem;
+    transition: filter 0.3s ease;
+}
+
+.legendes-card h3 {
+    position: absolute;
+    top: 0; 
+    left: 10%; 
+    z-index: 1;
+    margin: 10px;
+    padding: 0;
+    color: white; 
+}
+.legendes-card img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.legendes-card:hover {
+    filter: blur(2px);
+}
+
+/* Menu burger */
+#menu__toggle {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+#menu__toggle:checked + .menu__btn > span {
+    transform: rotate(45deg);
+}
+
+#menu__toggle:checked + .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0deg);
+}
+
+#menu__toggle:checked + .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+#menu__toggle:checked ~ .menu__box {
+    right: 0;   
+}
+
+.menu__btn {
+    position: fixed;
+    top: 25px;
+    right: 40px;
+    width: 1.5rem;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #a0a0a0;
+    transition-duration: .25s;
+    border-radius: 1rem;
+}
+
+.menu__btn > span::after {
+    content: '';
+    top: 8px;
+}
+
+.menu__box {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+    transition-duration: .25s;
+    clip-path: polygon(100% 0, 100% 25%, 80% 22%, 65% 25%, 65% 0);
+    background-color: #a00000;
+    text-align: right;
+}
+
+.menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    text-decoration: none;
+    transition-duration: .25s;
+}
+
+.menu__item:hover {
+    background-color: #c30000;  
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    height: fit-content;
+    padding: 3rem;
+    background-color: rgb(34, 34, 34);
+}
+
+.container-footer {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    padding-right: 5rem;
+}
+
+.contacts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.contacts-logo {
+    width: 30px;
+    height: 30px;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+.contacts a {
+    text-decoration: none;
+    color: white;
+}
+
+.contacts a:hover {
+    color: red;
+}
+
+.container-footer div:nth-child(1) {
+    grid-column: 2;
+}
+
+footer .apex-logo {
+    width: 60px;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+}
+
+@media screen and (width > 500px) {
+    .hamburger-menu {
+        display: none;
+    }
+    .container-header {
+        grid-template-columns: 100px repeat(3, 1fr);
+    }
+}
+
+@media screen and (width <= 500px) {
+    .link-sections, .link-legendes {
+        display: none;
+    }
+    .container-header {
+        grid-template-columns: 100px;
+    }
+    .presentation-video {
+        display: none;
+    }
+}
+
+@media screen and (width <= 1130px) {
+    .legendes-card {
+        margin-bottom: 5rem;
+        height: 200px;
+    }
+}

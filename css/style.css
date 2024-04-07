@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: antiquewhite;
+    background-color: black;
     font-family: Arial, Helvetica, sans-serif;
     width: 100vw;
     height: 100vh;
@@ -27,7 +27,7 @@ header {
 
 .container-header {
     display: grid;
-    grid-template-columns: 100px repeat(3, 1fr) 100px;
+    grid-template-columns: 100px repeat(4, 1fr);
     align-items: center;
 }
 
@@ -45,7 +45,6 @@ header .logo-apex, .link-section {
     color: rgb(255, 52, 52);
 } 
 
-
 header .logo-apex {
     width: 60px;
     position: relative;
@@ -57,6 +56,25 @@ header .logo-apex:hover {
     transform: scale(1.2);
 }
 
+header div:last-child {
+    grid-column: 5;
+}
+
+header div:last-child a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    padding-right: 5rem;
+}
+
+header div:last-child a:hover {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(255, 52, 52);
+}
+
 /* Section */
 
 section {
@@ -66,6 +84,7 @@ section {
 
 /* Section 1 */
 .container-presentation-info {
+    width: 300px;
     position: absolute;
     top: 50%;
     left: 50%; 
@@ -86,7 +105,6 @@ section {
 .container-presentation-info .logo-apex {
     width: 300px;
 }
-
 
 /* Menu burger */
 #menu__toggle {
@@ -172,18 +190,66 @@ section {
 }
 
 /* Section 2*/
-.container-legendes {
+#section2 {
     display: flex;
+    align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    padding: 2rem;
-    gap: 100px;
 }
 
-.cards-legendes {
-    width: 200px;
-    height: 200px;
-    background-color: grey;
+.container-cartes {
+    width: 1000px;
+    height: 800px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    border-radius: 0.4rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cartes-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 1rem;
+}
+
+.container-cartes ul {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}
+
+.container-cartes li {
+    padding-inline: 3rem;
+    font-style: italic;
+}
+
+.container-cartes li:hover {
+    color: rgb(255, 52, 52);
+    text-decoration: underline;
+    text-decoration-thickness: 2px; 
+}
+
+.container-cartes img {
+    width: 900px;
+    height: 650px;
+    object-fit: cover; 
+    -webkit-mask-image: url('img/fond-carte.png');
+    mask-image: url('img/fond-carte.png');
+    mask-size: 950px 650px; 
+    mask-repeat: no-repeat;
+    transition: transform 0.3s ease;
+}
+
+.container-cartes img:hover {
+    transform: scale(1.1);
+}
+
+.container-cartes p {
+    font-weight: bold;
 }
 
 /* Section 3 */
@@ -193,41 +259,61 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid;
 }
 
-/* #section3, #section2, #section1, header {
-    display: none;
-} */
+#section2, #section3 {
+    background: url("img/fond-degrade-rouge.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+.container-modes {
+    width: fit-content;
+    height: 800px;
+    color: black;
+    border-radius: 0.4rem;
+    display: grid;
+    grid-template-rows: repeat(4, 200px);
+}
+
+.container-modes div {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.container-modes div:nth-child(1) {
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 10%);
+}
+.container-modes div:nth-child(4) {
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 90% 100%, 0 100%);
+}
+
+.container-modes div:nth-child(odd) {
+    background: linear-gradient(90deg, rgba(252,143,60,1) 0%, rgba(252,147,61,1) 30%, rgba(252,149,62,1) 60%, rgba(252,154,63,1) 90%);
+}
+
+.container-modes div:nth-child(even) {
+    background: linear-gradient(90deg, rgba(169,184,226,1) 0%, rgba(169,184,226,1) 30%, rgba(156,186,230,1) 60%, rgba(151,187,232,1) 90%);
+}
+
+.container-modes div:nth-child(even) p, .container-modes div:nth-child(even) h3 {
+    display: flex;
+    justify-content: right;
+    text-align: right;
+}
 
 /* Footer */
-
-/* footer {
-    height: 10%;
-    background-color: bisque;
-    color: black;
-    padding: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} 
-
-.container-footer {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    align-items: center;
-} */
-
 footer {
     width: 100%;
     height: fit-content;
-    padding: 5%;
+    padding: 3rem;
     background-color: rgb(34, 34, 34);
 }
 
 .container-footer {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    padding-right: 5rem;
 }
 
 .contacts {
@@ -237,8 +323,20 @@ footer {
     transition: transform 0.3s ease;
 }
 
-.contacts:hover {
-    color: rgb(255, 52, 52);
+.contacts-logo {
+    width: 30px;
+    height: 30px;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+.contacts a {
+    text-decoration: none;
+    color: white;
+}
+
+.contacts a:hover {
+    color: red;
 }
 
 .container-footer div:nth-child(1) {
@@ -250,4 +348,40 @@ footer .apex-logo {
     display: flex;
     align-self: center;
     justify-self: center;
+}
+
+@media screen and (width > 500px) {
+    .hamburger-menu {
+        display: none;
+    }
+    .container-header {
+        grid-template-columns: 100px repeat(3, 1fr);
+    }
+}
+
+@media screen and (width <= 960px) {
+    .contacts-desc {
+        display: none;
+    }
+
+    footer h3 {
+        font-size: small;
+    }
+}
+
+@media screen and (width <= 500px) {
+    .link-section, .link-legends {
+        display: none;
+    }
+    .container-header {
+        grid-template-columns: 100px;
+    }
+    .presentation-video {
+        display: none;
+    }
+    #section1 {
+        background-image: url("/img/apex-fond1.jpg"); 
+        background-size: cover;
+        background-position: center;
+    }
 }

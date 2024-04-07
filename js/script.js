@@ -1,4 +1,3 @@
-
 document.querySelectorAll('.link-section').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -35,4 +34,12 @@ video.addEventListener('timeupdate', function() {
     if (this.currentTime >= 93) { 
         this.currentTime = 3;
     }
+});
+
+
+document.querySelectorAll('#cartes-list li').forEach(item => {
+    item.addEventListener('click', function() {
+        const imgSrc = this.getAttribute('data-img');
+        document.getElementById('carte-img').src = imgSrc;
+    });
 });
