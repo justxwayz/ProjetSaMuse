@@ -237,8 +237,8 @@ section {
     width: 900px;
     height: 650px;
     object-fit: cover; 
-    -webkit-mask-image: url('img/fond-carte.png');
-    mask-image: url('img/fond-carte.png');
+    -webkit-mask-image: url("/img/fond-carte.png");
+    mask-image: url("/img/fond-carte.png");
     mask-size: 950px 650px; 
     mask-repeat: no-repeat;
     transition: transform 0.3s ease;
@@ -262,7 +262,7 @@ section {
 }
 
 #section2, #section3 {
-    background: url("img/fond-degrade-rouge.jpg") no-repeat center center fixed;
+    background: url("/img/fond-degrade-rouge.jpg") no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -348,40 +348,4 @@ footer .apex-logo {
     display: flex;
     align-self: center;
     justify-self: center;
-}
-
-@media screen and (width > 500px) {
-    .hamburger-menu {
-        display: none;
-    }
-    .container-header {
-        grid-template-columns: 100px repeat(3, 1fr);
-    }
-}
-
-@media screen and (width <= 960px) {
-    .contacts-desc {
-        display: none;
-    }
-
-    footer h3 {
-        font-size: small;
-    }
-}
-
-@media screen and (width <= 500px) {
-    .link-section, .link-legends {
-        display: none;
-    }
-    .container-header {
-        grid-template-columns: 100px;
-    }
-    .presentation-video {
-        display: none;
-    }
-    #section1 {
-        background-image: url("/img/apex-fond1.jpg"); 
-        background-size: cover;
-        background-position: center;
-    }
 }
