@@ -1,0 +1,29 @@
+@media screen and (width > 1100px) {
+    .hamburger-menu {
+        display: none;
+    }
+    .container-header {
+        grid-template-columns: 100px repeat(3, 1fr);
+    }
+}
+
+@media screen and (width <= 1100px) {
+    .link-section, .link-legends {
+        display: none;
+    }
+    .container-header {
+        grid-template-columns: 100px;
+    }
+    .presentation-video {
+        display: none;
+    }
+    #section1 {
+        background-image: url("image/apex-fond1.png"); 
+        background-size: cover;
+        background-position: center;
+    }
+    .legendes-card {
+        margin-bottom: 5rem;
+        height: 200px;
+    }
+}
