@@ -262,7 +262,7 @@ section {
 }
 
 #section2, #section3 {
-    background: url("/img/fond-degrade-rouge.jpg") no-repeat center center fixed;
+    background: url("/img/fond-section.jpg") no-repeat center center fixed;
     background-size: cover;
 }
 
