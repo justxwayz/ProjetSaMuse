@@ -63,7 +63,6 @@ header .logo-apex:hover {
 }
 
 /* Section */
-
 section {
     width: 100vw;
     height: 100vh;
@@ -71,7 +70,7 @@ section {
 
 /* Section 1 */
 #section1 {
-    background: url("/img/fond-degrade-rouge.jpg") no-repeat center center fixed;
+    background: url("/image/fond-section.png") no-repeat center center fixed;
     background-size: cover;
     display: flex;
     justify-content: center;
