@@ -237,8 +237,8 @@ section {
     width: 900px;
     height: 650px;
     object-fit: cover; 
-    -webkit-mask-image: url("/img/fond-carte.png");
-    mask-image: url("/img/fond-carte.png");
+    -webkit-mask-image: url("img/fond-carte.png");
+    mask-image: url("img/fond-carte.png");
     mask-size: 950px 650px; 
     mask-repeat: no-repeat;
     transition: transform 0.3s ease;
@@ -262,7 +262,7 @@ section {
 }
 
 #section2, #section3 {
-    background: url("/img/fond-section.jpg") no-repeat center center fixed;
+    background: url("img/fond-section.jpg") no-repeat center center fixed;
     background-size: cover;
 }
 
