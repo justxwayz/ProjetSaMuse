@@ -246,31 +246,3 @@ footer .apex-logo {
     align-self: center;
     justify-self: center;
 }
-
-@media screen and (width > 500px) {
-    .hamburger-menu {
-        display: none;
-    }
-    .container-header {
-        grid-template-columns: 100px repeat(3, 1fr);
-    }
-}
-
-@media screen and (width <= 500px) {
-    .link-sections, .link-legendes {
-        display: none;
-    }
-    .container-header {
-        grid-template-columns: 100px;
-    }
-    .presentation-video {
-        display: none;
-    }
-}
-
-@media screen and (width <= 1130px) {
-    .legendes-card {
-        margin-bottom: 5rem;
-        height: 200px;
-    }
-}
